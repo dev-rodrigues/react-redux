@@ -55,38 +55,14 @@ export const fetchUsers = (): AppThunk => async (dispatch: AppDispatch) => {
     try {
         dispatch(startLoading());
     
-        const data: User[] = [];
+        let data: User[] = [];
 
-        // setTimeout(() => {
-
-        //      data.push(
-        //         {
-        //             id: 1,
-        //             name: "string",
-        //             username: "string",
-        //             email: "string",
-        //             address: {
-        //                 street: "string",
-        //                 suite: "string",
-        //                 city: "string",
-        //                 zipecode: "string",
-        //                 geo: {
-        //                     lat: "string",
-        //                     lng: "string"
-        //                 }
-        //             },
-        //             phone: "string",
-        //             website: "string",
-        //             company: {
-        //                 name: "string",
-        //                 catchPhrase: "string",
-        //                 bs: "string",
-        //             }
-        //         }
-        //     );
+        data.push({
+            id: Math.floor(Math.random() * 100),
+            name: 'John Doe',
+            username: 'johndoe',
+        });
             
-        // }, 2000);
-
         dispatch(getUsersSuccess(data));
     } catch (error) {
         dispatch(getUsersFailure());

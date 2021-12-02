@@ -12,16 +12,13 @@ const Users = () => {
     useEffect(() => {
         dispatch(fetchUsers());
     }, [dispatch]);
-    
+
     const renderUsers = () => {
         return users.map((user: User) => (
             <div key={user.id} className="PostItem">
                 <h1>
                     {user.id} -{user.username}
                 </h1>
-                <p>{user.email}</p>
-                <p>{user.phone}</p>
-                <p>{user.address}</p>
             </div>
         ));
     };
